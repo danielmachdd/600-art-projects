@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="600 ready-to-teach drawing, painting, collage, and sculpture projects for elementary and middle school.">
+    <title>600 Ready-to-Teach Art Projects</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d315b'/%3E%3Ccircle cx='22' cy='23' r='9' fill='%23f2bf3b'/%3E%3Ccircle cx='41' cy='22' r='9' fill='%23df5b48'/%3E%3Ccircle cx='31' cy='41' r='10' fill='%2340a38f'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lucide-static@1.23.0/font/lucide.css">
+    <link rel="stylesheet" href="./styles.css?v=art-600-1">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-shell header-inner">
+        <div class="brand-mark" aria-hidden="true"><i class="icon-palette"></i></div>
+        <div class="brand-copy">
+          <p class="eyebrow">Ready-to-teach art library</p>
+          <h1>600 Art Projects</h1>
+          <p>Drawing, painting, collage, and sculpture projects using simple, low-cost materials for Grades 1-8.</p>
+        </div>
+        <div class="header-count" aria-label="600 complete projects">
+          <strong>600</strong><span>complete projects</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <nav id="categoryTabs" class="category-tabs" aria-label="Filter by art technique">
+        <button class="category-tab is-active" type="button" data-category="All" aria-pressed="true">
+          <span class="category-tab-icon category-all" aria-hidden="true"><i class="icon-layout-grid"></i></span>
+          <span><strong>All Projects</strong><small>600 activities</small></span>
+        </button>
+        <button class="category-tab" type="button" data-category="Drawing" aria-pressed="false">
+          <span class="category-tab-icon category-drawing" aria-hidden="true"><i class="icon-pencil"></i></span>
+          <span><strong>Drawing</strong><small>150 projects</small></span>
+        </button>
+        <button class="category-tab" type="button" data-category="Painting" aria-pressed="false">
+          <span class="category-tab-icon category-painting" aria-hidden="true"><i class="icon-palette"></i></span>
+          <span><strong>Painting</strong><small>150 projects</small></span>
+        </button>
+        <button class="category-tab" type="button" data-category="Collage" aria-pressed="false">
+          <span class="category-tab-icon category-collage" aria-hidden="true"><i class="icon-layers-3"></i></span>
+          <span><strong>Collage</strong><small>150 projects</small></span>
+        </button>
+        <button class="category-tab" type="button" data-category="Sculpture &amp; 3D" aria-pressed="false">
+          <span class="category-tab-icon category-sculpture" aria-hidden="true"><i class="icon-box"></i></span>
+          <span><strong>Sculpture &amp; 3D</strong><small>150 projects</small></span>
+        </button>
+      </nav>
+
+      <section class="filter-panel" aria-label="Project filters">
+        <label class="field search-field">
+          <span>Search projects</span>
+          <span class="input-wrap"><i class="icon-search" aria-hidden="true"></i><input id="searchInput" type="search" placeholder="Search by project, skill, or material" autocomplete="off"></span>
+        </label>
+        <label class="field"><span>Grade band</span><select id="gradeSelect"><option value="All">All grade bands</option><option value="Grades 1-2">Grades 1-2</option><option value="Grades 3-5">Grades 3-5</option><option value="Grades 6-8">Grades 6-8</option></select></label>
+        <label class="field"><span>Technique</span><select id="techniqueSelect"><option value="All">All techniques</option></select></label>
+        <button id="resetFilters" class="reset-button" type="button"><i class="icon-rotate-ccw" aria-hidden="true"></i><span>Reset</span></button>
+      </section>
+
+      <section class="catalog-heading" aria-labelledby="catalogTitle">
+        <div><p class="eyebrow">Complete classroom library</p><h2 id="catalogTitle">Browse art projects</h2></div>
+        <p id="resultCount" class="result-count" aria-live="polite"></p>
+      </section>
+      <section id="projectGrid" class="project-grid" aria-label="Art project catalog"></section>
+      <section id="emptyState" class="empty-state" hidden><i class="icon-search-x" aria-hidden="true"></i><h2>No projects found</h2><p>Try a different keyword or reset the filters.</p><button type="button" data-reset-filters>Reset filters</button></section>
+    </main>
+
+    <dialog id="detailDialog" class="detail-dialog" aria-labelledby="detailTitle">
+      <article class="detail-panel">
+        <button id="closeDialog" class="icon-button close-button" type="button" aria-label="Close project details" title="Close"><i class="icon-x" aria-hidden="true"></i></button>
+        <div id="detailContent"></div>
+      </article>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="page-shell footer-inner">
+        <section class="support-copy" aria-labelledby="supportTitle"><p class="eyebrow">Teacher support</p><h2 id="supportTitle">Need help using the library?</h2><p>Contact us for access questions, DOCX download issues, or ideas for adapting a project to your classroom.</p><a class="support-link" href="mailto:priscilaprofesora@gmail.com"><i class="icon-mail" aria-hidden="true"></i><span><strong>Contact Support</strong><small>priscilaprofesora@gmail.com</small></span></a></section>
+        <section class="library-copy" aria-labelledby="libraryTitle"><p class="eyebrow">Built for real classrooms</p><h2 id="libraryTitle">Simple materials. Clear instruction.</h2><p>Every project includes the essential objective, materials, steps, expected result, teaching tips, safety guidance, and an editable DOCX.</p></section>
+      </div>
+    </footer>
+
+    <script src="./data.js?v=art-600-1"></script>
+    <script src="./app.js?v=art-600-1"></script>
+  </body>
+</html>
